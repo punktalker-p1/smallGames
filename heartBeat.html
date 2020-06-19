@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>心跳</title>
+    <style>
+        body {
+            background: #000000;
+        }
+        .content::before, .content::after {
+            content: '';
+            width: 300px;
+            height: 400px;
+            position: absolute;
+            top: 0;
+            background-color: #ff3e3e;
+            border-radius: 50% 50% 0 0;
+        }
+        .content::before {
+            left: 0;
+            transform: rotate(-49deg);
+        }
+        .content {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 400px;
+            height: 400px;
+            animation: heartBeat 1s infinite;
+        }
+        .content::after {
+            right: 0;
+            transform: rotate(48deg);
+
+        }
+        .heart_decoration {
+            position: absolute;
+            width: 70px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.5);
+            right: 20%;
+            top: 20%;
+            z-index: 1;
+        }
+        @keyframes heartBeat {
+            0% {
+                transform: translate(-50%, -50%) scale(0.8);
+            }
+            25% {
+                transform: translate(-50%, -50%) scale(0.9);
+            }
+            50% {
+                transform: translate(-50%, -50%) scale(1);
+            }
+            75% {
+                transform: translate(-50%, -50%) scale(1.1);
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(1.2);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="music">
+        <audio src="./王力宏 - 心跳.mp3" autoplay controls loop></audio>
+    </div>
+    <div class="content">
+        <span class="heart_decoration"></span>
+    </div>
+</body>
+</html>
